@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26AB0172210999C800D65939 /* CropOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB0171210999C800D65939 /* CropOverlayViewController.swift */; };
 		26F817E721058B0700B7B7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F817E621058B0700B7B7F7 /* AppDelegate.swift */; };
 		26F817E921058B0700B7B7F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F817E821058B0700B7B7F7 /* ViewController.swift */; };
 		26F817EC21058B0700B7B7F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F817EA21058B0700B7B7F7 /* Main.storyboard */; };
@@ -14,6 +15,11 @@
 		26F817F121058B0800B7B7F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F817EF21058B0800B7B7F7 /* LaunchScreen.storyboard */; };
 		26F817FC21058B0900B7B7F7 /* StickerMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F817FB21058B0800B7B7F7 /* StickerMakerTests.swift */; };
 		26F8180721058B0900B7B7F7 /* StickerMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8180621058B0900B7B7F7 /* StickerMakerUITests.swift */; };
+		26F8181A2105922D00B7B7F7 /* Regift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26F818182105922D00B7B7F7 /* Regift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26F8181C2105923D00B7B7F7 /* Regift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F818182105922D00B7B7F7 /* Regift.framework */; };
+		26F818212105A37400B7B7F7 /* MediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F818202105A37400B7B7F7 /* MediaHelper.swift */; };
+		26F818232105A60000B7B7F7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F818222105A60000B7B7F7 /* ResultViewController.swift */; };
+		26F818252105C2F000B7B7F7 /* UIimageExtensionGif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F818242105C2F000B7B7F7 /* UIimageExtensionGif.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +39,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		26F8181B2105922D00B7B7F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				26F8181A2105922D00B7B7F7 /* Regift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		26AB0171210999C800D65939 /* CropOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropOverlayViewController.swift; sourceTree = "<group>"; };
 		26F817E321058B0700B7B7F7 /* StickerMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickerMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F817E621058B0700B7B7F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F817E821058B0700B7B7F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +68,11 @@
 		26F8180221058B0900B7B7F7 /* StickerMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickerMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F8180621058B0900B7B7F7 /* StickerMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerMakerUITests.swift; sourceTree = "<group>"; };
 		26F8180821058B0900B7B7F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26F818162105922500B7B7F7 /* Regift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Regift.framework; path = Carthage/Build/iOS/Regift.framework; sourceTree = "<group>"; };
+		26F818182105922D00B7B7F7 /* Regift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Regift.framework; path = Carthage/Build/iOS/Regift.framework; sourceTree = "<group>"; };
+		26F818202105A37400B7B7F7 /* MediaHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaHelper.swift; sourceTree = "<group>"; };
+		26F818222105A60000B7B7F7 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		26F818242105C2F000B7B7F7 /* UIimageExtensionGif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIimageExtensionGif.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F8181C2105923D00B7B7F7 /* Regift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +104,12 @@
 		26F817DA21058B0700B7B7F7 = {
 			isa = PBXGroup;
 			children = (
+				26F818182105922D00B7B7F7 /* Regift.framework */,
 				26F817E521058B0700B7B7F7 /* StickerMaker */,
 				26F817FA21058B0800B7B7F7 /* StickerMakerTests */,
 				26F8180521058B0900B7B7F7 /* StickerMakerUITests */,
 				26F817E421058B0700B7B7F7 /* Products */,
+				26F818152105922500B7B7F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +127,15 @@
 			isa = PBXGroup;
 			children = (
 				26F817E621058B0700B7B7F7 /* AppDelegate.swift */,
+				26F818202105A37400B7B7F7 /* MediaHelper.swift */,
+				26F818222105A60000B7B7F7 /* ResultViewController.swift */,
 				26F817E821058B0700B7B7F7 /* ViewController.swift */,
 				26F817EA21058B0700B7B7F7 /* Main.storyboard */,
 				26F817ED21058B0800B7B7F7 /* Assets.xcassets */,
 				26F817EF21058B0800B7B7F7 /* LaunchScreen.storyboard */,
 				26F817F221058B0800B7B7F7 /* Info.plist */,
+				26F818242105C2F000B7B7F7 /* UIimageExtensionGif.swift */,
+				26AB0171210999C800D65939 /* CropOverlayViewController.swift */,
 			);
 			path = StickerMaker;
 			sourceTree = "<group>";
@@ -125,6 +158,14 @@
 			path = StickerMakerUITests;
 			sourceTree = "<group>";
 		};
+		26F818152105922500B7B7F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26F818162105922500B7B7F7 /* Regift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +176,8 @@
 				26F817DF21058B0700B7B7F7 /* Sources */,
 				26F817E021058B0700B7B7F7 /* Frameworks */,
 				26F817E121058B0700B7B7F7 /* Resources */,
+				26F8181421058DD100B7B7F7 /* ShellScript */,
+				26F8181B2105922D00B7B7F7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +294,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26F8181421058DD100B7B7F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Regift.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Regift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		26F817DF21058B0700B7B7F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26F818212105A37400B7B7F7 /* MediaHelper.swift in Sources */,
 				26F817E921058B0700B7B7F7 /* ViewController.swift in Sources */,
 				26F817E721058B0700B7B7F7 /* AppDelegate.swift in Sources */,
+				26AB0172210999C800D65939 /* CropOverlayViewController.swift in Sources */,
+				26F818232105A60000B7B7F7 /* ResultViewController.swift in Sources */,
+				26F818252105C2F000B7B7F7 /* UIimageExtensionGif.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +497,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3RCCUG568;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StickerMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +519,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3RCCUG568;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StickerMaker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

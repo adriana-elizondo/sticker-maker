@@ -1,0 +1,11 @@
+framework module RegiftOSX {
+  umbrella header "RegiftOSX.h"
+
+  export *
+  module * { export * }
+}
+
+module RegiftOSX.Swift {
+    header "RegiftOSX-Swift.h"
+    requires objc
+}

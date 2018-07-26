@@ -1,0 +1,11 @@
+framework module Regift {
+  umbrella header "Regift.h"
+
+  export *
+  module * { export * }
+}
+
+module Regift.Swift {
+    header "Regift-Swift.h"
+    requires objc
+}

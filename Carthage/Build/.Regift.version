@@ -1,0 +1,21 @@
+{
+  "Mac" : [
+    {
+      "name" : "RegiftOSX",
+      "hash" : "c290dde8ae86afefc850ade007b824441113271ef778fc801cd075d3354602db"
+    }
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "1.5.0",
+  "iOS" : [
+    {
+      "name" : "Regift",
+      "hash" : "50eb8f449d6482c5c534eda4046822c2aa281eded1363613dcb8af4f8563749a"
+    }
+  ]
+}

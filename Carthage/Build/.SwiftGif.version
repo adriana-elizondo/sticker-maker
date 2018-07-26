@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "v1.6.1",
+  "iOS" : [
+    {
+      "name" : "SwiftGif",
+      "hash" : "c1ef7870bebf029e59e499fbcf606dbd3b0a817bbd60bf2740d6c191fbaa3867"
+    }
+  ]
+}
