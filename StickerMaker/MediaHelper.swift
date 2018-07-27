@@ -16,9 +16,9 @@ enum MediaHelperError : Error{
 }
 
 class MediaHelper{
-    static func createGifFromVideo(with url: URL, with completion: ((URL?, Data?) -> Void)?){
+    static func createGifFromVideo(with url: URL, numberOfFrames: Int = 8, delayBetweenFrames: Float = 0.2, with completion: ((URL?, Data?) -> Void)?){
         let videoURL = url
-        Regift.createGIFFromSource(videoURL, destinationFileURL: nil, frameCount: 8, delayTime: 0.2, loopCount: 0, size:  CGSize(width: 400, height: 400)) { (result) in
+        Regift.createGIFFromSource(videoURL, destinationFileURL: nil, frameCount: numberOfFrames, delayTime: delayBetweenFrames, loopCount: 0, size:  CGSize(width: 400, height: 400)) { (result) in
             if let data = NSData(contentsOfFile: result?.path ?? ""){
                 if completion != nil{
                     completion!(result, data as Data)

@@ -14,7 +14,12 @@ import MobileCoreServices
 class ViewController: UIViewController {
     @IBOutlet weak var messagesLabel: UILabel!
     @IBOutlet weak var delayBetweenFrames: UILabel!
-    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var slider: UISlider!{
+        didSet{
+            slider.addTarget(self, action: #selector(updateLabel), for: .valueChanged)
+        }
+    }
+    @IBOutlet weak var numberOfFrames: UITextField!
     private var url: URL?
     private var data: Data?
     
@@ -61,6 +66,10 @@ class ViewController: UIViewController {
             resultVC.data = data
         }
     }
+    
+    @objc private func updateLabel(){
+        delayBetweenFrames.text = "\(slider.value) seconds"
+    }
 }
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -91,7 +100,7 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
 //        }
         
             self.messagesLabel.text = "Making it a gif..."
-            MediaHelper.createGifFromVideo(with: url) { (resultingUrl, data) in
+        MediaHelper.createGifFromVideo(with: url,numberOfFrames: Int(numberOfFrames.text ?? "8") ?? 8, delayBetweenFrames: slider.value) { (resultingUrl, data) in
                 self.url = resultingUrl
                 self.data = data
                 self.performSegue(withIdentifier: "goToResult", sender: self)
