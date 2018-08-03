@@ -22,9 +22,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var numberOfFrames: UITextField!
     private var url: URL?
     private var data: Data?
+    private var controller = AVPlayerViewController()
+    private var actionSheet : UIAlertController?
+    
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        return UITapGestureRecognizer(target: self, action: #selector(dismissAllInputViews))
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addGestureRecognizer(tapGesture)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -39,15 +46,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
-        let actionSheet = UIAlertController(title: "", message: "How do you want to do this?", preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "Record it now", style: .default, handler: { (action) in
+        actionSheet = UIAlertController(title: "", message: "How do you want to do this?", preferredStyle: .actionSheet)
+        actionSheet?.addAction(UIAlertAction(title: "Record it now", style: .default, handler: { (action) in
             self.presentPicker(with: .camera)
         }))
-        actionSheet.addAction(UIAlertAction(title: "From my videos", style: .default, handler: { (action) in
+        actionSheet?.addAction(UIAlertAction(title: "From my videos", style: .default, handler: { (action) in
             self.presentPicker(with: .photoLibrary)
         }))
         
-        self.present(actionSheet, animated: true, completion: nil)
+        actionSheet?.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+        }))
+        
+        self.present(actionSheet!, animated: true, completion: nil)
     }
     
     private func presentPicker(with type: UIImagePickerControllerSourceType){
@@ -70,6 +80,11 @@ class ViewController: UIViewController {
     @objc private func updateLabel(){
         delayBetweenFrames.text = "\(slider.value) seconds"
     }
+    
+    @objc private func dismissAllInputViews(){
+        guard numberOfFrames.isFirstResponder else {return}
+        numberOfFrames.resignFirstResponder()
+    }
 }
 
 extension ViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -84,28 +99,45 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
         
         self.url = url
         //editing in progress
-//        // Create an AVPlayer, passing it the HTTP Live Streaming URL.
-//        let player = AVPlayer(url: self.url!)
-//
-//        // Create a new AVPlayerViewController and pass it a reference to the player.
-//        let controller = AVPlayerViewController()
-//        controller.player = player
-//
-//        // Modally present the player and call the player's play() method when complete.
-//        present(controller, animated: true) {
-//            player.play()
-//            let overlay = CropOverlayViewController(with: controller.videoBounds)
-//            overlay.modalPresentationStyle = .overFullScreen
-//            controller.present(overlay, animated: true, completion: nil)
-//        }
+        //Create an AVPlayer, passing it the HTTP Live Streaming URL.
+        let player = AVPlayer(url: self.url!)
         
-            self.messagesLabel.text = "Making it a gif..."
-        MediaHelper.createGifFromVideo(with: url,numberOfFrames: Int(numberOfFrames.text ?? "8") ?? 8, delayBetweenFrames: slider.value) { (resultingUrl, data) in
-                self.url = resultingUrl
-                self.data = data
-                self.performSegue(withIdentifier: "goToResult", sender: self)
+        // Create a new AVPlayerViewController and pass it a reference to the player.
+        controller.player = player
+        
+        // Modally present the player and call the player's play() method when complete.
+        present(controller, animated: true) {
+            player.play()
+            let overlay = CropOverlayViewController(with: self.controller.videoBounds)
+            overlay.modalPresentationStyle = .overFullScreen
+            overlay.delegate = self
+            self.controller.present(overlay, animated: true, completion: nil)
+        }
+    }
+}
+
+extension ViewController: CropOverlayDelegate{
+    func didFinishCropping(with cropArea: CGRect) {
+        dismiss(animated: true, completion: nil)
+        var calculatedCrop = cropArea
+        calculatedCrop.origin.y = controller.videoBounds.origin.y - cropArea.origin.y - (Constants.navBarHeight + Constants.statusBarHeight)
+        
+        print("I am going to crop in.... \(calculatedCrop)")
+
+        self.messagesLabel.text = "Cropping your video..."
+        MediaHelper.squareCropVideo(inputURL: (url! as NSURL), renderSize: controller.videoBounds.size, cropSize: calculatedCrop) { (url, error) in
+            if error == nil{
+                self.messagesLabel.text = "Making it a gif..."
+                MediaHelper.createGifFromVideo(with: url!,numberOfFrames: Int(self.numberOfFrames.text ?? "10") ?? 10, delayBetweenFrames: self.slider.value) { (resultingUrl, data) in
+                    self.url = resultingUrl
+                    self.data = data
+                    self.performSegue(withIdentifier: "goToResult", sender: self)
+                }
+            }else{
+                self.messagesLabel.text = "Error ): \(error!)"
             }
-       
+        }
+        
     }
 }
 

@@ -42,33 +42,46 @@ class MediaHelper{
         
     }
     
-    static func squareCropVideo(inputURL: NSURL, completion: @escaping (_ outputURL : URL?, _ error: Error?) -> ())
+    static func squareCropVideo(inputURL: NSURL, renderSize:CGSize, cropSize:CGRect, completion: @escaping (_ outputURL : URL?, _ error: Error?) -> ())
     {
         let videoAsset: AVAsset = AVAsset( url: inputURL as URL )
         let clipVideoTrack = videoAsset.tracks(withMediaType: AVMediaType.video ).first! as AVAssetTrack
         
         let composition = AVMutableComposition()
         composition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: CMPersistentTrackID())
-        
         let videoComposition = AVMutableVideoComposition()
-        videoComposition.renderSize = CGSize( width: clipVideoTrack.naturalSize.height, height: clipVideoTrack.naturalSize.height )
+        videoComposition.renderSize = renderSize
         videoComposition.frameDuration = CMTimeMake(1, 16)
         
         let transformer = AVMutableVideoCompositionLayerInstruction(assetTrack: clipVideoTrack)
-        
         let instruction = AVMutableVideoCompositionInstruction()
         instruction.timeRange = CMTimeRangeMake(kCMTimeZero, CMTimeMakeWithSeconds(60, 30))
         
+        let transform = clipVideoTrack.preferredTransform
+        print("transform \(transform)")
+        var transformWithNoTranslation = transform
+        transformWithNoTranslation.tx = 0
+        transformWithNoTranslation.ty = 0
         
-        let transform1: CGAffineTransform = CGAffineTransform(translationX: clipVideoTrack.naturalSize.height, y: (clipVideoTrack.naturalSize.width - clipVideoTrack.naturalSize.height) / 2)
-        let transform2 = transform1.rotated(by: .pi/2)
+        var originX = -cropSize.origin.x
+        var originY = cropSize.origin.y
+        
+        if transformWithNoTranslation.c != 0 {
+            originX = cropSize.origin.y
+            originY = -cropSize.origin.x
+        }
+      
+        let transform1 = transform.translatedBy(x: originX, y: originY)
+        let sizeX = renderSize.width / clipVideoTrack.naturalSize.width
+        let sizeY = renderSize.height / clipVideoTrack.naturalSize.height
+        let transform2 = transform1.scaledBy(x: sizeX, y: sizeY)
+        
         let finalTransform = transform2
-        
-        
+
         transformer.setTransform(finalTransform, at: kCMTimeZero)
-        
         instruction.layerInstructions = [transformer]
         videoComposition.instructions = [instruction]
+        videoComposition.renderSize = cropSize.size
         
         // Export
         let exportSession = AVAssetExportSession(asset: videoAsset, presetName: AVAssetExportPresetHighestQuality)!
@@ -76,8 +89,7 @@ class MediaHelper{
         do {
             try FileManager.default.removeItem(at: url)
         }catch{
-            completion(nil, error)
-            return
+            print("error removing file \(error)")
         }
         
         let croppedOutputFileUrl = url

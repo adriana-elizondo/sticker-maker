@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		26AB0172210999C800D65939 /* CropOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB0171210999C800D65939 /* CropOverlayViewController.swift */; };
+		26C249272112D3E3000EC411 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C249262112D3E3000EC411 /* Constants.swift */; };
 		26F817E721058B0700B7B7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F817E621058B0700B7B7F7 /* AppDelegate.swift */; };
 		26F817E921058B0700B7B7F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F817E821058B0700B7B7F7 /* ViewController.swift */; };
 		26F817EC21058B0700B7B7F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F817EA21058B0700B7B7F7 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		26AB0171210999C800D65939 /* CropOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropOverlayViewController.swift; sourceTree = "<group>"; };
+		26C249262112D3E3000EC411 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		26F817E321058B0700B7B7F7 /* StickerMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickerMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F817E621058B0700B7B7F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F817E821058B0700B7B7F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				26F817F221058B0800B7B7F7 /* Info.plist */,
 				26F818242105C2F000B7B7F7 /* UIimageExtensionGif.swift */,
 				26AB0171210999C800D65939 /* CropOverlayViewController.swift */,
+				26C249262112D3E3000EC411 /* Constants.swift */,
 			);
 			path = StickerMaker;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				26F817E921058B0700B7B7F7 /* ViewController.swift in Sources */,
 				26F817E721058B0700B7B7F7 /* AppDelegate.swift in Sources */,
 				26AB0172210999C800D65939 /* CropOverlayViewController.swift in Sources */,
+				26C249272112D3E3000EC411 /* Constants.swift in Sources */,
 				26F818232105A60000B7B7F7 /* ResultViewController.swift in Sources */,
 				26F818252105C2F000B7B7F7 /* UIimageExtensionGif.swift in Sources */,
 			);
