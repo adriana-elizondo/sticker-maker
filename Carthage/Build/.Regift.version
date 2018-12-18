@@ -2,7 +2,7 @@
   "Mac" : [
     {
       "name" : "RegiftOSX",
-      "hash" : "c290dde8ae86afefc850ade007b824441113271ef778fc801cd075d3354602db"
+      "hash" : "e09e935c5a6be8c458eb9e4f3012d069790ce334d5f6af3025c08cc972b971b7"
     }
   ],
   "watchOS" : [
@@ -15,7 +15,7 @@
   "iOS" : [
     {
       "name" : "Regift",
-      "hash" : "50eb8f449d6482c5c534eda4046822c2aa281eded1363613dcb8af4f8563749a"
+      "hash" : "689d158708f76445b7d5dcafbb3bd4d537e0e9455dcc4ac32e452c1b031eaec8"
     }
   ]
 }

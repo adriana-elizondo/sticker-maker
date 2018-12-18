@@ -61,9 +61,10 @@ class ViewController: UIViewController {
     }
     
     private func presentPicker(with type: UIImagePickerControllerSourceType){
-        let picker = UIImagePickerController()
-        picker.sourceType = type
+        let picker = LandscapeImagePicker()
+        picker.sourceType = type 
         picker.videoMaximumDuration = 4
+        
         picker.mediaTypes = [kUTTypeMovie as String]
         picker.allowsEditing = true
         picker.delegate = self
@@ -98,14 +99,9 @@ extension ViewController : UIImagePickerControllerDelegate, UINavigationControll
             else { return }
         
         self.url = url
-        //editing in progress
-        //Create an AVPlayer, passing it the HTTP Live Streaming URL.
         let player = AVPlayer(url: self.url!)
-        
-        // Create a new AVPlayerViewController and pass it a reference to the player.
         controller.player = player
         
-        // Modally present the player and call the player's play() method when complete.
         present(controller, animated: true) {
             player.play()
             let overlay = CropOverlayViewController(with: self.controller.videoBounds)

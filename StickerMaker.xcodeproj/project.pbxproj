@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		264007A32148B9B10067AE3A /* LandscapeImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264007A22148B9B10067AE3A /* LandscapeImagePicker.swift */; };
 		26AB0172210999C800D65939 /* CropOverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AB0171210999C800D65939 /* CropOverlayViewController.swift */; };
 		26C249272112D3E3000EC411 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C249262112D3E3000EC411 /* Constants.swift */; };
 		26F817E721058B0700B7B7F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F817E621058B0700B7B7F7 /* AppDelegate.swift */; };
@@ -16,7 +17,6 @@
 		26F817F121058B0800B7B7F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26F817EF21058B0800B7B7F7 /* LaunchScreen.storyboard */; };
 		26F817FC21058B0900B7B7F7 /* StickerMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F817FB21058B0800B7B7F7 /* StickerMakerTests.swift */; };
 		26F8180721058B0900B7B7F7 /* StickerMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F8180621058B0900B7B7F7 /* StickerMakerUITests.swift */; };
-		26F8181A2105922D00B7B7F7 /* Regift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26F818182105922D00B7B7F7 /* Regift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26F8181C2105923D00B7B7F7 /* Regift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F818182105922D00B7B7F7 /* Regift.framework */; };
 		26F818212105A37400B7B7F7 /* MediaHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F818202105A37400B7B7F7 /* MediaHelper.swift */; };
 		26F818232105A60000B7B7F7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F818222105A60000B7B7F7 /* ResultViewController.swift */; };
@@ -47,7 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				26F8181A2105922D00B7B7F7 /* Regift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,6 +54,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2606A8EE214A4FCF00F9C61A /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Main.strings"; sourceTree = "<group>"; };
+		2606A8EF214A4FD000F9C61A /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2606A8F1214A4FFC00F9C61A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		264007A22148B9B10067AE3A /* LandscapeImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeImagePicker.swift; sourceTree = "<group>"; };
 		26AB0171210999C800D65939 /* CropOverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropOverlayViewController.swift; sourceTree = "<group>"; };
 		26C249262112D3E3000EC411 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		26F817E321058B0700B7B7F7 /* StickerMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickerMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +142,7 @@
 				26F818242105C2F000B7B7F7 /* UIimageExtensionGif.swift */,
 				26AB0171210999C800D65939 /* CropOverlayViewController.swift */,
 				26C249262112D3E3000EC411 /* Constants.swift */,
+				264007A22148B9B10067AE3A /* LandscapeImagePicker.swift */,
 			);
 			path = StickerMaker;
 			sourceTree = "<group>";
@@ -321,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26F818212105A37400B7B7F7 /* MediaHelper.swift in Sources */,
+				264007A32148B9B10067AE3A /* LandscapeImagePicker.swift in Sources */,
 				26F817E921058B0700B7B7F7 /* ViewController.swift in Sources */,
 				26F817E721058B0700B7B7F7 /* AppDelegate.swift in Sources */,
 				26AB0172210999C800D65939 /* CropOverlayViewController.swift in Sources */,
@@ -366,6 +371,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				26F817EB21058B0700B7B7F7 /* Base */,
+				2606A8EE214A4FCF00F9C61A /* es-419 */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -374,6 +380,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				26F817F021058B0800B7B7F7 /* Base */,
+				2606A8EF214A4FD000F9C61A /* es-419 */,
+				2606A8F1214A4FFC00F9C61A /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -385,6 +393,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -445,6 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -506,6 +516,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = StickerMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -528,6 +539,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = StickerMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,24 @@
+
+/* Class = "UITextField"; text = "10"; ObjectID = "GYQ-fy-VSa"; */
+"GYQ-fy-VSa.text" = "10";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "b2v-jF-OAm"; */
+"b2v-jF-OAm.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "0.20 seconds"; ObjectID = "cwm-ih-KSc"; */
+"cwm-ih-KSc.text" = "0.20 seconds";
+
+/* Class = "UIButton"; normalTitle = "Create my sticker!"; ObjectID = "gXM-p5-Slp"; */
+"gXM-p5-Slp.normalTitle" = "Create my sticker!";
+
+/* Class = "UILabel"; text = "Messages label"; ObjectID = "gbw-FU-tX0"; */
+"gbw-FU-tX0.text" = "Messages label";
+
+/* Class = "UILabel"; text = "Only the first 5 seconds will be used so choose wisely my young padawan..."; ObjectID = "pcj-fu-V2e"; */
+"pcj-fu-V2e.text" = "Only the first 5 seconds will be used so choose wisely my young padawan...";
+
+/* Class = "UILabel"; text = "Number of frames"; ObjectID = "tvX-Y5-X8J"; */
+"tvX-Y5-X8J.text" = "Number of frames";
+
+/* Class = "UILabel"; text = "Delay between frames"; ObjectID = "wzI-hq-fGT"; */
+"wzI-hq-fGT.text" = "Delay between frames";
